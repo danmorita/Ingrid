@@ -59,9 +59,16 @@ public class BotMaster extends Thread{
 		System.out.println("======================================");
 		new BotManager(conexao).start();
                 
-                //viewBotMaster.IngridPrompt("Ingrid:// novo bot connectado...");
+                viewBotMaster.IngridPrompt("Ingrid:// novo bot connectado...");
+                viewBotMaster.IngridPrompt("Bot Connetado");
+		viewBotMaster.IngridPrompt("HOSTNAME = " + conexao.getInetAddress().getHostName());
+		viewBotMaster.IngridPrompt("HOST ADDRESS = " + conexao.getInetAddress().getHostAddress());
+		viewBotMaster.IngridPrompt("PORTA LOCAL = " + conexao.getLocalPort());
+                viewBotMaster.IngridPrompt("PORTA DE CONEXAO = " + conexao.getPort());
+		                
 	    } catch (IOException e) {
-		e.printStackTrace();
+		
+                viewBotMaster.IngridPrompt(e.toString());
             }
 	}
     }
